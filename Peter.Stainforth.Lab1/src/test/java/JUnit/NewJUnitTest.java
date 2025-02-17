@@ -45,7 +45,7 @@ public class NewJUnitTest {
     
     @Test
     void testDatabasePropertiesPath() {
-        try(InputStream in = getClass().getResourceAsStream("/lab1/database.properties")) {
+        try(InputStream in = Files.newInputStream(Paths.get("src/main/java/database.properties"))) {
             assertNotNull(in, "File not found.");
         } catch (IOException e){
             e.printStackTrace();
